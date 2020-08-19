@@ -1,0 +1,5 @@
+house<-read.table("./household_power_consumption.txt",sep=";")
+b<-filter(house,house$V1=="2/2/2007")
+a<-filter(house,house$V1=="1/2/2007")
+data<-rbind(a,b)
+hist(as.numeric(data$V3),col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)")
